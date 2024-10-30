@@ -60,7 +60,6 @@
     ['Подчеркнутые', 'text-decoration', 'underline'],
   ]
 
-
   let entity = $state<Record<string, string>>({ value: '', id: '' })
 
   let styleSettings = $derived.by(() => {
@@ -212,7 +211,6 @@
       ? { id: "", value: ""}
       : record
   }
-  
 
   $effect(() => {
     //console.log(Object.keys(eng2ru).map(value => eng2ru[value]))

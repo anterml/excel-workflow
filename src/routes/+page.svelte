@@ -210,7 +210,6 @@
     // todo
   }
 
-  
   function clearStateByEsc(e: KeyboardEvent) {
     if(e.key.toLowerCase() == 'z' && e.ctrlKey) {
       if(savePreviousValue.length) {
@@ -253,7 +252,6 @@
     recordPopup = false
     newRecord = ""
   }
-
 
   const contextMenu: Record<HeaderName, number[]> = {
     productName: [1,2,3],
@@ -348,7 +346,9 @@
     
     return styles
   }
+
   $inspect(rowData)
+
   let contextMenuItemUrl = $derived.by(() => {
     if(selectedRow >= 0 && selectedColumn) {
       const cell = data[selectedRow].value[selectedColumn]
@@ -589,6 +589,7 @@
     background-color: #333;
     color: white;
   }
+
   .controls > span {
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -598,6 +599,7 @@
   .active {
     color: blueviolet;
   }
+
   .table-box {
     background: #ccc;
     padding: 1px;
@@ -613,6 +615,7 @@
     /* overscroll-behavior: var(--overscroll-behavior);
 	  scroll-snap-type: var(--scroll-snap-type); */
   }
+
   .tooltip {
     position: absolute;
     min-width: 300px;
@@ -643,6 +646,7 @@
   .selected .tooltip-mark {
     display: none;
   }
+
   .record-popup {
     position: absolute;
     top: 50%;
@@ -805,9 +809,11 @@
   .content {
     scroll-snap-align: var(--scroll-snap-align)
   }
+  
   .content:has(> .selected) {
     outline: 1px dashed #333;
   }
+
   .disabled {
     color: #555;
   }

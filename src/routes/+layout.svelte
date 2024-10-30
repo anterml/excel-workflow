@@ -5,7 +5,6 @@
     children: Snippet,
   }
   let { children }: Props = $props()
-
 </script>
 
 <div class="root-wrap">

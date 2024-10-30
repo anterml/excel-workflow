@@ -1,6 +1,6 @@
 import type { Action } from 'svelte/action'
 
-  // scrollX by ctrl
+// scrollX by ctrl
 const moveExcelTableByX: Action = (node: HTMLElement) => {
   let ctrl: boolean = false
   let click: boolean = false
