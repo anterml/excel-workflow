@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --my-global-color: red;
+  --my-global-bgcolor: black;
+
+  --my-color-primary: white;
+  --my-color-secondary: gray;
+  --my-bgcolor-primary: black;
+  --my-bgcolor-secondary: orange;
+  --my-py: 3px;
+  --my-px: 8px;
+  --my-rounded-3: 3px;
+  --my-rounded-6: 6px;
+  --my-rounded-10: 6px;
+  --my-border-default: 1px solid #333;
+  
+  --clr-text-primary: oklch(25% 0 0);
+  --clr-text-secondary: oklch(100% 0 0);
+  --bg: oklch(97% 0 0);
+
+  --container-padding-y: 1rem;
+  --container-padding-x: 1.25rem;
+  --margin-x: var(--container-padding-x);
+  --margin-y: var(--container-padding-y);
+
+  --button-bg-primary: white;
+  --button-bg-secondary: #1d4ed8;
+
+  --button-border-primary: 1px solid #868686;
+  --button-border-secondary: 2px solid #050e27;
+
+  --border-radius: 3px;
+  --button-padding: 0.25rem 1rem;
+  --font-size: 14px;
+  --font-weight: 500;
+
+  --color1: #9553e9;
+  --color1: #efefef;
+  --color2: #6d74ed;
+  --color3: #202e59;
+  --color4: #303f6d;
+
+  --surface-color1: oklch(from var(--bg) calc(l - 0.05) c h);
+  --surface-color2: oklch(from var(--bg) calc(l - 0.1) c h);
+  --surface-color3: oklch(from var(--bg) calc(l - 0.15) c h);
+
+  --scroll-snap-align-start: start;
+  --scroll-snap-align-initial: initial;
+  --scroll-snap-align: var(--scroll-snap-align-start);
+  --scroll-snap-type: y mandatory;
+  --overscroll-behavior: contain;
+  --excel-content-scroll-snap-align: var(--scroll-snap-align-start);
+  --excel-records-scroll-snap-align: var(--scroll-snap-align-initial);
+  --scrollbar-width: thin;
+  --scrollbar-color: #949494 #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Circe;
+  src: url(fonts/Circe-400.woff2);
+}
+
+@font-face {
+  font-family: Circe;
+  src: url(fonts/Circe-900.woff2);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Circe;
+  src: url(fonts/Circe-300.woff2);
+  font-weight: 300;
+}
+
+html {
+  background-color: var(--bg);
+  font-family: Circe;
+}
+
+html,
+body {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.scroll-y {
+    overscroll-behavior: contain;
+    overflow-y: scroll;
+    /* scroll-snap-type: y mandatory; */
+    scrollbar-color: var(--surface-color4) var(--surface-color2);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+	.scroll {
+    overscroll-behavior: contain;
+    overflow: auto;
+    /* scroll-snap-type: y mandatory; */
+    scrollbar-color: var(--surface-color4) var(--surface-color2);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+}
+
+.surface1 {
+  background-color: var(--surface-color1);
+}
+
+.list1 {
+  background-color: var(--surface-color1);
+}
+
+.list1-item {
+  --_item-bg: inherit;
+  background-color: var(--_item-bg);
+}
+
+.list1-item:hover {
+  --_item-bg: var(--surface-color2);
+}
+
+.list1-item.active {
+  --_item-bg: var(--surface-color3);
+}
+
+.line {
+  background-color: var(--color1);
+  color: rgba(255,255,255,0.9);
+}
+
+.line-selected {
+  --color1: #efefef;
+}
+
+/* button {
+  border: var(--my-border-default);
+  padding: var(--my-py) var(--my-px);
+  border-radius: var(--my-rounded-6);
+} */
+
+.btn-primary {
+  color: var(--clr-primary);
+  background-color: var(--button-bg-primary);
+  border: var(--button-border-primary);
+}
+
+.btn-secondary {
+  color: var(--clr-secondary);
+  background-color: var(--button-bg-secondary);
+  border: var(--button-border-secondary);
+}
+
+.btn {
+  border-radius: var(--border-radius);
+  padding: var(--button-padding);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+}
+
+.accent {
+  --button-bg-primary: brown;
+  --clr-primary: #efefef;
+  --clr-secondary: red;
+  --button-border-primary: 2px solid rgb(37, 4, 4);
+}
+
+.input {
+  border-radius: var(--border-radius);
+  padding: var(--button-padding);
+  font-size: var(--font-size);
+}
+
+.input-primary {
+  color: var(--clr-primary);
+  background-color: var(--button-bg-primary);
+  border: var(--button-border-primary);
+}
+
+.container-padding {
+  padding: var(--container-padding-y) var(--container-padding-x);
+}
+.container-padding-x {
+  padding: 0 var(--container-padding-x);
+}
+.container-padding-y {
+  padding: var(--container-padding-y) 0;
+}
+
+.container-margin {
+  margin: var(--container-padding-y) var(--container-padding-x);
+}
+.container-margin-x {
+  margin: 0 var(--container-padding-x);
+}
+.container-margin-y {
+  margin: var(--container-padding-y) 0;
+}
+
+.-container-margin-x {
+  margin: 0 calc(var(--container-padding-x) * -1);
+}
+.-container-margin-l {
+  margin: 0 0 0 calc(var(--container-padding-x) * -1);
+}
+.-container-margin-r {
+  margin: 0 calc(var(--container-padding-x) * -1) 0 0;
+}
+
+.-container-margin-y {
+  margin: calc(var(--container-padding-y) * -1) 0;
+}
+.-container-margin-t {
+  margin: calc(var(--container-padding-y) * -1) 0 0 0;
+}
+.-container-margin-b {
+  margin: 0 0 calc(var(--container-padding-y) * -1) 0;
+}
+
+
+.input-elem {
+  margin-bottom: var(--margin-y);
+}
