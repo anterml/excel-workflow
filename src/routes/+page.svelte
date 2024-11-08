@@ -47,24 +47,6 @@
     ]
   }])
 
-  //$inspect(rowData)
-
-  /*
-  function getMap(value: DataType[number]['value']) {
-    const buff = {}
-    Object.keys(value).forEach(name => {
-      buff[name] = crypto.randomUUID()
-    })
-    return buff
-  }
-
-  console.log('result', getMap(DataDB[0].value))
-  */
-
-  /* const data1 = $state(generateData())
-  $inspect(data1) */
-
-  //$inspect(data)
   type HeaderName = keyof typeof eng2ru
 
   let isNewTooltip: boolean = false
@@ -298,9 +280,6 @@
   }
 
   function dblclick(e: Event) {
-    const target = e.currentTarget as HTMLDivElement
-    //const name = target.dataset.name as HeaderName
-    //const i = parseInt(target.dataset.i!)
     savePreviousValue.push({
       column: selectedColumn,
       row: selectedRow,
@@ -357,28 +336,7 @@
   })
 
   function getStyleRow(row: typeof data[number]['value']) {
-    /* for(const rowItem of rowData) {
-      const match = rowItem.fields.every(field => {
-        const record = DBrecords[field.name].find(record => record.id === row[field.name].value)
-        if(!record)
-          return console.log('no', field.name)
-        if(record.id === field.value) {
-          //console.log('found', field)
-          return true
-        }
-      })
-
-      if(match) {
-        const styles = [rowItem.styles]
-        if(rowItem.color)
-          styles.push('color:' + rowItem.color)
-        if(rowItem['background-color'])
-          styles.push('background-color:' + rowItem['background-color'])
-
-        return styles.join(";")
-      }
-    } */
-
+    // todo
     return ''
   }
 
