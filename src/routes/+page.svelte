@@ -14,18 +14,9 @@
 
   const entityStyles = $state<EntityStyles>({
     'source': 'color:pink;',
-    'c2557f47-de6a-4689-8257-bf099d32032a': 'background-color:#c3e387;',
-    '039c411d-bca2-48d0-87da-8933b51d70e2': 'background-color:#ff9e9e;',
-    'c6642abb-d80b-49bd-9da8-12700b35cffa': 'font-weight:bold;',
-    '14061921-8bd4-49d0-99c2-07acfcbe39c2': 'background-color:#bae9ff;font-style:italic;',
-    'a9c8d61e-7312-452f-9667-a725956500bc': 'background-color:#ffadfc;font-weight:bold;',
-    "0f07391a-1bdf-42f9-89fc-5c4a78d8c66c": 'background-color:#ffbaba;',
-    "80395493-4906-451c-8117-2cc88546d283": 'background-color:#babaff;',
   })
 
-  const cellUrls: EntityUrls = {
-    '14061921-8bd4-49d0-99c2-07acfcbe39c2': "https://ya.ru",
-  }
+  const cellUrls: EntityUrls = {}
   
   const records = $state<Records>(DataRecords)
   const data = $state<DataType>(DataDB)
