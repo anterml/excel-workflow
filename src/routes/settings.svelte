@@ -75,9 +75,6 @@
     return styles
   })
 
-  //$effect(() => console.log(styleSettings))
-  //$effect(() => console.log(entity.id, selectedTab, entityStyles))
-
   function changeColor(e: Event) {
     const target = e.target as HTMLInputElement
     const name = target.name as string
@@ -85,7 +82,6 @@
     const value = entityStyles[entity.id] || ""
     const styles = value.split(";").filter(style => style && !style.startsWith(`${name}:`))
 
-    //if(target.value !== '#ffffff')
     styles.push(`${name}:${target.value};`)
     
     entityStyles[entity.id] = styles.join(";")
@@ -138,24 +134,6 @@
     }
     entityStyles[entity.id] = styles.join(";")
   }
-/* 
-  function changeStyle(e: Event) {
-    const target = e.target as HTMLInputElement
-    const name = target.name as string
-    const [ styleName, styleValue] = name.split(":")
-
-    const styles = (entityStyles[entity.id] || "").split(";")
-    const style = styles.find(style => style.startsWith(styleName))
-
-    if(style) {
-      let value = styles.filter(style => style.startsWith(styleName)).join(";")
-      if(style !== name)
-        value += name + ";"
-      entityStyles[entity.id] = value
-    } else {
-      entityStyles[entity.id] = name
-    }
-  } */
 
   function setUrl(e: Event) {
     const target = e.target as HTMLInputElement
@@ -212,12 +190,6 @@
       : record
   }
 
-  $effect(() => {
-    //console.log(Object.keys(eng2ru).map(value => eng2ru[value]))
-    //console.log(entity.value)
-    //console.log(entityStyles[dataColumns[Object.keys(eng2ru).find(value => eng2ru[value] === entity.value) || ""]])
-  })
-
   function getColumnName(styleName: string) {
     for(const name of Object.keys(records)) {
       const record = records[name].find(record => record.value === entity.value)
@@ -247,16 +219,6 @@
     const { rowid, fieldid } = target.dataset
     const name = option.dataset.name as string
     const value = target.value
-
-    /* if(fieldName in records)
-      console.log('records', fieldName)
-    else if(fieldsTypes.date.includes(fieldName))  {
-      console.log('date', fieldName)
-    }
-    else if(fieldsTypes.number.includes(fieldName))  {
-      console.log('number', fieldName)
-    } */
-
     const rowItem = rowData.find(rowItem => rowItem.id === rowid)
 
     if(rowItem) {
